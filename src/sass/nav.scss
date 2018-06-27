@@ -1,0 +1,26 @@
+.nav-wrap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  .navbar-default {
+    max-width: 1400px;
+    margin: auto;
+    background: transparent;
+    border: none 0;
+    box-shadow: none;
+    .home-hide{
+      height: 40px;
+      margin-top: 5px;
+    }
+    .navbar-nav > li > a {
+      color: #fff;
+      cursor: pointer;
+      &:hover {
+        color: #b3670a;
+        transition: 1s all;
+      }
+    }
+  }
+}

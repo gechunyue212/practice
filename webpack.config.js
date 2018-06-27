@@ -104,7 +104,7 @@ module.exports = {
     },
     plugins: plugins,
     resolve: {
-        extensions: ['js', 'vue', 'json', 'css', 'sass'],
+        // extensions: ['js', 'vue', 'json', 'css', 'sass'],
         alias: {}
     },
     externals:{
