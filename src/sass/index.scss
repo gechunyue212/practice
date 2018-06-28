@@ -23,7 +23,7 @@ html, body, .swiper-container, .swiper-slide {
     width: $w;
     height: $w;
     margin-top: 12px;
-    background: #000;
+    background: #fff;
     border:2px solid rgba(136,223,148,1);
     opacity: 1;
     &-active {
@@ -32,15 +32,22 @@ html, body, .swiper-container, .swiper-slide {
   }
 }
 
-.ani {
-  position: absolute;
-}
+
 
 .swiper-slide1 {
   background:linear-gradient(151.1deg,rgba(58,179,155,1),rgba(136,223,148,1));
   transition: opacity 600ms;
 }
+.swiper-slide2{
+  .ge-container{
+    height: 100%;
+  }
+  svg{
+    width: 100%;
+    max-height: 100%;
+  }
 
+}
 .content-outer {
   @include poa-father();
   display: flex;
@@ -74,6 +81,7 @@ html, body, .swiper-container, .swiper-slide {
     }
     .while-btn {
       display: inline-block;
+      position: static;
       $h: 50px;
       width: 245px;
       height: $h;
@@ -98,4 +106,5 @@ html, body, .swiper-container, .swiper-slide {
 .enb-h2{
   margin-top: 100px;
   font-size:36px;
+  position: absolute;
 }
