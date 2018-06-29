@@ -18,7 +18,10 @@ $('.tab-language').click(function () {
     isEnglish = !isEnglish
     setLanguage()
 })
-var scale
+
+
+var secondAnimate = new TimelineLite()
+
 
 var mySwiper = new Swiper('.swiper-container', {
     direction: 'vertical',
@@ -39,84 +42,13 @@ var mySwiper = new Swiper('.swiper-container', {
             swiperAnimate(this)
         },
         slideChangeTransitionEnd: function () {
-            switch (this.activeIndex) {
-                case 1:
-                    secondAnimateFn()
-                    break
-            }
+
             swiperAnimate(this)
         },
         slideChangeTransitionStart: function () {
-            function initSecondEls() {
-                var $svg = $('.swiper-slide2 svg'),
-
-                    svgBg = $svg.find('.svg-bg')[0],
-                    svgItem1 = $svg.find('.svg-item1')[0],
-                    svgItem2 = $svg.find('.svg-item2')[0],
-                    svgItem3 = $svg.find('.svg-item3')[0],
-                    svgText1 = $svg.find('.svg-text1')[0],
-                    svgText2 = $svg.find('.svg-text2')[0],
-                    svgText3 = $svg.find('.svg-text3')[0],
-                    line0 = $svg.find('.svg-line0')[0],
-                    line1 = $svg.find('.svg-line1')[0],
-                    line2 = $svg.find('.svg-line2')[0],
-                    line3 = $svg.find('.svg-line3')[0],
-                    line4 = $svg.find('.svg-line4')[0],
-                    line5 = $svg.find('.svg-line5')[0]
-                TweenMax.set(svgText1, {
-                    opacity: 0,
-                    scaleX: .3
-
-                })
-                TweenMax.set(svgText2, {
-                    opacity: 0,
-                    scaleX: .3
-
-                })
-                TweenMax.set(svgText3, {
-                    opacity: 0,
-                    scaleX: .3
-
-                })
-                TweenMax.set(svgBg, {
-                    opacity: 0,
-                    x: 280,
-                    y: 2000
-                })
-                TweenMax.set(svgItem1, {
-                    x: 324,
-                    y: 736
-                })
-                TweenMax.set(svgItem2, {
-                    y: 637,
-                    x: 1165
-                })
-                TweenMax.set(svgItem3, {
-                    x: 1038,
-                    y: 175
-                })
-                elInit(line0)
-                elInit(line1)
-                elInit(line2)
-                elInit(line3)
-                elInit(line4)
-                elInit(line5)
-                elInit(svgItem1)
-                elInit(svgItem2)
-                elInit(svgItem3)
-
-                function elInit(el) {
-                    TweenMax.set(el, {
-                        scale: '0,0',
-                        rotation: 100,
-                        transformOrigin: 'left bottom'
-                    })
-                }
-            }
-
             switch (this.activeIndex) {
                 case 1:
-                    initSecondEls()
+                    secondAnimate.restart()
                     break
             }
         }
@@ -127,21 +59,73 @@ var mySwiper = new Swiper('.swiper-container', {
 // 第二屏的动画
 
 function secondAnimateFn() {
-    var secondAnimate = new TimelineMax(),
-        $svg = $('.swiper-slide2 svg'),
+
+    var $svg = $('.swiper-slide2 svg'),
         svgBg = $svg.find('.svg-bg')[0],
-        svgText1 = $svg.find('.svg-text1')[0],
-        svgText2 = $svg.find('.svg-text2')[0],
-        svgText3 = $svg.find('.svg-text3')[0],
         svgItem1 = $svg.find('.svg-item1')[0],
         svgItem2 = $svg.find('.svg-item2')[0],
         svgItem3 = $svg.find('.svg-item3')[0],
+        svgText1 = $svg.find('.svg-text1')[0],
+        svgText2 = $svg.find('.svg-text2')[0],
+        svgText3 = $svg.find('.svg-text3')[0],
         line0 = $svg.find('.svg-line0')[0],
         line1 = $svg.find('.svg-line1')[0],
         line2 = $svg.find('.svg-line2')[0],
         line3 = $svg.find('.svg-line3')[0],
         line4 = $svg.find('.svg-line4')[0],
         line5 = $svg.find('.svg-line5')[0]
+    TweenMax.set(svgText1, {
+        opacity: 0,
+        scaleX: .3
+
+    })
+    TweenMax.set(svgText2, {
+        opacity: 0,
+        scaleX: .3
+
+    })
+    TweenMax.set(svgText3, {
+        opacity: 0,
+        scaleX: .3
+
+    })
+    TweenMax.set(svgBg, {
+        opacity: 0,
+        x: 280,
+        y: 2000
+    })
+    TweenMax.set(svgItem1, {
+        x: 324,
+        y: 736
+    })
+    TweenMax.set(svgItem2, {
+        y: 637,
+        x: 1165
+    })
+    TweenMax.set(svgItem3, {
+        x: 1038,
+        y: 175
+    })
+    TweenMax.set(line0, {
+        strokeDashoffset: 324,
+        strokeDasharray: '324'
+    })
+    // elInit(line0)
+    elInit(line1)
+    elInit(line2)
+    elInit(line3)
+    elInit(line4)
+    elInit(line5)
+    elInit(svgItem1)
+    elInit(svgItem2)
+    elInit(svgItem3)
+
+    function elInit(el) {
+        TweenMax.set(el, {
+            scale: '0,0',
+            transformOrigin: 'left bottom'
+        })
+    }
 
     secondAnimate
         .to(svgBg, 1, {
@@ -152,9 +136,8 @@ function secondAnimateFn() {
         })
         .to(line0, .543, {
             transformOrigin: 'left bottom',
-            scaleY: 1,
-            scaleX: 1,
-            rotation: 0
+            strokeDashoffset: 0
+
         })
         .to(svgItem1, .543, {
             transformOrigin: 'left bottom',
@@ -227,4 +210,6 @@ function secondAnimateFn() {
         })
 
 }
+
+secondAnimateFn()
 
