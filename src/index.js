@@ -20,46 +20,12 @@ $('.tab-language').click(function () {
 })
 
 
-var secondAnimate = new TimelineLite()
+var secondAnimate = new TimelineLite({}),
+    fourAnimate = new TimelineLite()
 
-
-var mySwiper = new Swiper('.swiper-container', {
-    direction: 'vertical',
-    hashNavigation: {
-        watchState: true
-    },
-    mousewheel: true,
-    watchSlidesProgress: true,
-    pagination: {
-        el: '.swiper-pagination',
-        clickable: true // 可点击
-
-    },
-    on: {
-        init: function () {
-            this.myIndex = 0//activeIndex在滑动到一半时会切换，改用滑动完再切换的myIndex
-            swiperAnimateCache(this)
-            swiperAnimate(this)
-        },
-        slideChangeTransitionEnd: function () {
-
-            swiperAnimate(this)
-        },
-        slideChangeTransitionStart: function () {
-            switch (this.activeIndex) {
-                case 1:
-                    secondAnimate.restart()
-                    break
-            }
-        }
-    }
-})
-
-
-// 第二屏的动画
-
-function secondAnimateFn() {
-
+// 初始化动画
+function initAnimate() {
+    // 第二屏的初始化
     var $svg = $('.swiper-slide2 svg'),
         svgBg = $svg.find('.svg-bg')[0],
         svgItem1 = $svg.find('.svg-item1')[0],
@@ -127,6 +93,47 @@ function secondAnimateFn() {
         })
     }
 
+    // 第四屏的初始化
+    var $fourSvg = $('.slide4-svg'),
+        img1 = $fourSvg.find('.slide4-svg-img1')[0],
+        img2 = $fourSvg.find('.slide4-svg-img2')[0],
+        img3 = $fourSvg.find('.slide4-svg-img3')[0],
+        img4 = $fourSvg.find('.slide4-svg-img4')[0],
+        img5 = $fourSvg.find('.slide4-svg-img5')[0],
+        img6 = $fourSvg.find('.slide4-svg-img6')[0]
+
+    elInit2(img1, 300)
+    elInit2(img2, 300)
+    elInit2(img3, 800)
+    elInit2(img4, 800)
+    elInit2(img5, 800)
+    elInit2(img6, 800)
+
+    function elInit2(el, y) {
+        TweenMax.set(el, {
+            y: y
+        })
+    }
+
+    fourAnimate
+        .to(img1, 1, {
+            y: 0
+        },1.6)
+        .to(img2, 1, {
+            y: 0
+        }, '-=0.5')
+        .to(img3, 1, {
+            y: 0
+        }, '-=0.5')
+        .to(img4, 1, {
+            y: 0
+        }, '-=0.9')
+        .to(img5, 1, {
+            y: 0
+        }, '-=0.9')
+        .to(img6, 1, {
+            y: 0,
+        }, '-=0.9')
     secondAnimate
         .to(svgBg, 1, {
             x: 280,
@@ -211,5 +218,43 @@ function secondAnimateFn() {
 
 }
 
-secondAnimateFn()
+initAnimate()
+
+var mySwiper = new Swiper('.swiper-container', {
+    direction: 'vertical',
+    hashNavigation: {
+        watchState: true
+    },
+    mousewheel: true,
+    watchSlidesProgress: true,
+    pagination: {
+        el: '.swiper-pagination',
+        clickable: true // 可点击
+
+    },
+    on: {
+        init: function () {
+            this.myIndex = 0//activeIndex在滑动到一半时会切换，改用滑动完再切换的myIndex
+            swiperAnimateCache(this)
+            swiperAnimate(this)
+        },
+        slideChangeTransitionEnd: function () {
+
+            swiperAnimate(this)
+        },
+        slideChangeTransitionStart: function () {
+            switch (this.activeIndex) {
+                case 1:
+                    secondAnimate.restart()
+                    break
+                case 3:
+                    fourAnimate.restart()
+                    break
+            }
+        }
+    }
+})
+
+
+
 

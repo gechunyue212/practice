@@ -122,6 +122,79 @@ html, body, .swiper-container, .swiper-slide {
       margin-bottom: 10px;
     }
   }
+  .ge-container {
+    height: 100%;
+  }
+  .slide4-svg {
+    width: 80%;
+    height: auto;
+    bottom: 0;
+    right: 0;
+  }
+}
+
+.swiper-slide6 {
+  .six-contain {
+    margin-top: 50px;
+    .img-wrap {
+      overflow: hidden;
+    }
+    .img-hover {
+      width: 100%;
+      transition: .5s all;
+      &:hover {
+        transform: scale(1.1, 1.1);
+      }
+    }
+    .container-wrap {
+      .title {
+        font-size: 18px;
+        height: 50px;
+        margin: 20px 0 10px;
+      }
+      .from {
+        font-size: 14px;
+        color: rgba(155, 155, 155, 1);
+      }
+    }
+  }
+}
+
+.swiper-slide7 {
+  .slide7-container {
+    max-width: 800px;
+    margin:100px auto 0;
+
+    .team-item {
+      margin-bottom: 20px;
+      position: relative;
+      overflow: hidden;
+      .team-img {
+        width: 100%;
+      }
+      &:hover .people-des-wrap {
+        bottom: 0;
+      }
+      .people-des-wrap {
+        transition: .5s all;
+        position: absolute;
+        bottom: -100px;
+        right: 15px;
+        left: 15px;
+        background: rgba(0, 0, 0, .4);
+        text-align: center;
+        padding: 15px;
+
+        .work {
+          font-size: 18px;
+        }
+        .name {
+          font-size: 12px;
+          color: rgba(255, 255, 255, 1);
+        }
+      }
+    }
+  }
 }
 
 .content-outer {
