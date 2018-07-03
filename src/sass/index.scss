@@ -126,10 +126,78 @@ html, body, .swiper-container, .swiper-slide {
     height: 100%;
   }
   .slide4-svg {
-    width: 80%;
+    max-width: 80%;
+    max-height: 60%;
     height: auto;
     bottom: 0;
     right: 0;
+  }
+}
+
+.time-swiper-container {
+  margin-top: 20px;
+  .swiper-slide {
+    $w: 38px;
+    $h: 32px;
+    width: 25%;
+    @media (max-width: 1000px) {
+      width: 50%;
+    }
+    @media (max-width: 500px) {
+      width: 100%;
+    }
+    height: 400px;
+    overflow: visible;
+    .time-wrap {
+      padding: 0 30px;
+      background: linear-gradient(92.4deg, rgba(58, 179, 155, .4), rgba(1, 1, 1, 0));
+      border-left: 2px solid #88DF94;
+      margin: $h 0 0 $w/2;
+      position: relative;
+    }
+    .time-year{
+      padding-left: $w/2;
+      height:50px;
+      font-size:36px;
+      font-weight: bold;
+      background:linear-gradient(151.1deg,rgba(58,179,155,1),rgba(136,223,148,1));
+      line-height:50px;
+    }
+    .time-num {
+      width: $w;
+      height: $h;
+      line-height: $h;
+      text-align: center;
+      font-size: 22px;
+      background: linear-gradient(92.4deg, #3AB39B, #88DF94);
+      border: 2px solid #3AB39B;
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform: translate3d(-$w/2, -$h, 0);
+    }
+    .time-title {
+      margin-top: 10px;
+      margin-bottom: 10px;
+      font-size: 18px;
+    }
+    .time-body {
+      font-size: 16px;
+      opacity: .8;
+      line-height: 25px;
+    }
+  }
+  .swiper-button-next, .swiper-button-prev {
+    position: absolute;
+    top: 100%;
+    margin-top: -44px;
+    left:50%;
+  }
+  .swiper-button-next{
+    margin-left: 50px;
+  }
+  .swiper-button-prev{
+    margin-left: -50px;
   }
 }
 
@@ -163,7 +231,7 @@ html, body, .swiper-container, .swiper-slide {
 .swiper-slide7 {
   .slide7-container {
     max-width: 800px;
-    margin:100px auto 0;
+    margin: 100px auto 0;
 
     .team-item {
       margin-bottom: 20px;

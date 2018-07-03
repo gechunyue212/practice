@@ -66,7 +66,8 @@ module.exports = {
         hot: false,
         inline: true,//DevServer 会在构建完变化后的代码时通过代理客户端控制网页刷新。
         port: config.build.port,
-        open: 'http://localhost:' + config.build.port + '/'
+        host: '0.0.0.0',
+        open: 'http://localhost:' + config.build.port + '/',
     },
     output: {
         path: config.build.path,
@@ -87,7 +88,12 @@ module.exports = {
             {
                 test: /.scss$/,
                 use: [
-                    MiniCssExtractPlugin.loader,
+                    {
+                        loader:MiniCssExtractPlugin.loader,
+                        options:{
+                            publicPath: '../../'
+                        }
+                    },
                     {
                         loader: 'css-loader'
                     }, {
@@ -98,17 +104,41 @@ module.exports = {
                     }
                 ]
 
+            },
+            {
+                test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
+                loader: 'url-loader',
+                options: {
+                    limit: 10000,
+                    name: ('static/img/[name].[hash:7].[ext]')
+                }
+            },
+            {
+                test: /\.(mp4|webm|ogg|mp3|wav|flac|aac)(\?.*)?$/,
+                loader: 'url-loader',
+                options: {
+                    limit: 10000,
+                    name: ('static/media/[name].[hash:7].[ext]')
+                }
+            },
+            {
+                test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
+                loader: 'url-loader',
+                options: {
+                    limit: 10000,
+                    name: ('static/fonts/[name].[hash:7].[ext]')
+                }
             }
 
         ]
     },
     plugins: plugins,
     resolve: {
-        // extensions: ['js', 'vue', 'json', 'css', 'sass'],
+        extensions: ['.js', '.vue', '.json', '.css', '.sass'],
         alias: {}
     },
-    externals:{
-        'Swiper': 'Swiper',
+    externals: {
+        'Swiper': 'Swiper'
     }
 
 

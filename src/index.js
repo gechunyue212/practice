@@ -118,7 +118,7 @@ function initAnimate() {
     fourAnimate
         .to(img1, 1, {
             y: 0
-        },1.6)
+        }, 1.6)
         .to(img2, 1, {
             y: 0
         }, '-=0.5')
@@ -132,7 +132,7 @@ function initAnimate() {
             y: 0
         }, '-=0.9')
         .to(img6, 1, {
-            y: 0,
+            y: 0
         }, '-=0.9')
     secondAnimate
         .to(svgBg, 1, {
@@ -220,7 +220,7 @@ function initAnimate() {
 
 initAnimate()
 
-var mySwiper = new Swiper('.swiper-container', {
+var mySwiper = new Swiper('.main-swiper-container', {
     direction: 'vertical',
     hashNavigation: {
         watchState: true
@@ -228,7 +228,7 @@ var mySwiper = new Swiper('.swiper-container', {
     mousewheel: true,
     watchSlidesProgress: true,
     pagination: {
-        el: '.swiper-pagination',
+        el: '.swiper-pagination-main',
         clickable: true // 可点击
 
     },
@@ -239,7 +239,6 @@ var mySwiper = new Swiper('.swiper-container', {
             swiperAnimate(this)
         },
         slideChangeTransitionEnd: function () {
-
             swiperAnimate(this)
         },
         slideChangeTransitionStart: function () {
@@ -253,6 +252,13 @@ var mySwiper = new Swiper('.swiper-container', {
             }
         }
     }
+})
+var tiemSwiper = new Swiper('.time-swiper-container', {
+    slidesPerView: 'auto',
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+    },
 })
 
 
