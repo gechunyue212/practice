@@ -30,12 +30,6 @@
   float: right;
 }
 
-.W100 {
-  width: 100%;
-}
-
-
-
 .center-Y {
   position: absolute;
   top: 50%;
@@ -49,35 +43,43 @@
   bottom: 0;
   left: 0;
 }
-$h1List:(
-        'null' : 10px,
-        '480px': 20px,
-        '728px': 30px,
-        '1200px': 40px,
-);
-$pList:(
-        'null' : 15px,
-        '480px': 16px,
-        '728px': 17px,
-        '1200px': 18px,
-);
 
-@mixin media($property,$list){
+@for $i from 1 through 100 {
+  .W#{$i} {
+    width: $i * 1%;
+  }
+  .H#{$i} {
+    height: $i* 1%;
+  }
+}
+
+.WH100 {
+  width: 100%;
+  height: 100%;
+}
+
+@mixin media($property,$list:(),$type : 'max-width') {
   @each $query, $value in $list {
     //设置一个默认的值
-    @if $point == "null"{
+    @if $query == "null" {
       #{$property} : $value;
-    }@else{
-      @media (min-width : $point){
+    } @else {
+      @media (#{$type}: $query+'px') {
         #{$property}: $value;
       }
     }
   }
 }
 
-.swiper-slide{
-  @include media('font-size',('null':10px,'550px':19px))
+@mixin mediaAll($propertys) {
+  @each $item in $propertys {
+    $property: nth($item, 1);
+    $list: nth($item, 2);
+    $type: 'max-width';
+    @if length($item) >= 3 {
+      $type: nth($item, 3);
+    }
+    @include media($property, $list, $type)
+  }
 }
-h1{
-  @include media('font-size',$h1List);
-}
+
