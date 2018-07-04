@@ -55,7 +55,6 @@ function initAnimate () {
     strokeDashoffset: 324,
     strokeDasharray: '324'
   })
-  // elInit(line0)
   elInit(line1)
   elInit(line2)
   elInit(line3)
@@ -93,6 +92,84 @@ function initAnimate () {
       y: y
     })
   }
+
+  // 第5屏初始化
+  var $svg = $('.tech-svg'),
+   startLine1 = $svg.find('#i2'),
+   endLine1 = $svg.find('#i1'),
+   yuan1 = $svg.find('#_4'),
+   yuan2 = $svg.find('#_3'),
+   yuan3 = $svg.find('#_2'),
+   yuan4 = $svg.find('#_1'),
+   z1 = $svg.find('#z1'),
+   z2 = $svg.find('#z2'),
+   z3 = $svg.find('#z3'),
+   z4 = $svg.find('#z4'),
+   z5 = $svg.find('#z5')
+  TweenMax.set(z5, {
+    scaleX:.3,scaleY:.3,
+    transformOrigin:'center center',
+    opacity:0,
+    rotation:180,
+
+
+  })
+  TweenMax.set([z1,z2,z3,z4],{opacity:0})
+  TweenMax.set(yuan1, {
+    x: 550, y: -500
+  })
+  TweenMax.set(startLine1, {
+    x: 660, y: -600
+  })
+  TweenMax.set(endLine1, {
+    x: 300, y: -300
+  })
+  TweenMax.set(yuan2, {
+    x: 550, y: -500
+  })
+  TweenMax.set(yuan3, {
+    x: 250, y: -200
+  })
+  TweenMax.set(yuan4, {
+    x: 250, y: -200
+  })
+  fiveAnimate
+   .to(startLine1, 1.1, {
+     x: 0, y: 0
+   }, 1)
+   .to(yuan1, 1.3, {
+     x: 0, y: 0
+   }, '-=1')
+   .to(yuan2, 1.2, {
+     x: 0, y: 0
+   }, '-=1')
+   .to(yuan3, 1.2, {
+     x: 0, y: 0
+   }, '-=1')
+   .to(yuan4, 1.2, {
+     x: 0, y: 0
+   }, '-=1')
+   .to(endLine1, 1, {
+     x: 0, y: 0
+   }, '-=1.2')
+   .to(z5, .3,{
+     scaleX:2,scaleY:2,
+     transformOrigin:'center center',
+     opacity:1,
+     rotation:0
+   },'-=0.3')
+   .to(z5, .3,{
+     scaleX:1,scaleY:1,
+     transformOrigin:'center center'
+   })
+   .to([z1,z2,z3,z4], 1,{
+     opacity:1,
+   })
+   .to(z5, 3,{
+     repeat:-1,
+     opacity:.5,
+     yoyo:true
+   })
 
   fourAnimate
    .to(img1, 1, {
