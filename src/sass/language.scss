@@ -8,3 +8,53 @@
     display: none !important;
   }
  }
+
+ .cls-1, .cls-10, .cls-11, .cls-2, .cls-3, .cls-4, .cls-5, .cls-8, .cls-9 {
+   fill: none;
+   stroke-width: 2px;
+   fill-rule: evenodd;
+ }
+
+.cls-1 {
+  stroke: url(#linear-gradient);
+}
+
+.cls-2 {
+  stroke: url(#linear-gradient-2);
+}
+
+.cls-3 {
+  stroke: url(#linear-gradient-3);
+}
+
+.cls-4 {
+  stroke: url(#linear-gradient-4);
+}
+
+.cls-5 {
+  stroke: url(#linear-gradient-5);
+}
+
+.cls-6 {
+  opacity: 0.72;
+}
+
+.cls-7 {
+  opacity: 0.74;
+}
+
+.cls-8 {
+  stroke: url(#linear-gradient-6);
+}
+
+.cls-9 {
+  stroke: url(#linear-gradient-7);
+}
+
+.cls-10 {
+  stroke: url(#linear-gradient-8);
+}
+
+.cls-11 {
+  stroke: url(#linear-gradient-9);
+}

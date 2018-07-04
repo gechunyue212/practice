@@ -163,6 +163,12 @@ html, body, .swiper-container, .swiper-slide {
     }
     height: 400px;
     overflow: visible;
+    .swiper-poa{
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+    }
     .time-wrap {
       padding: 0 30px;
       background: linear-gradient(92.4deg, rgba(58, 179, 155, .4), rgba(1, 1, 1, 0));
@@ -213,6 +219,13 @@ html, body, .swiper-container, .swiper-slide {
   }
   .swiper-button-prev {
     margin-left: -50px;
+  }
+}
+
+.swiper-slide5-1{
+  .tech-svg{
+    max-width: 100%;
+    max-height: 100%;
   }
 }
 
