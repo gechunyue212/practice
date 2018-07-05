@@ -26,7 +26,6 @@ var mySwiper = new Swiper('.main-swiper-container', {
       swiperAnimate(this)
     },
     slideChangeTransitionStart: function () {
-      console.log(this.activeIndex)
       switch (this.activeIndex) {
         case 1:
           secondAnimate.restart()

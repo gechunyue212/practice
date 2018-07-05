@@ -1,6 +1,6 @@
-export var secondAnimate = new TimelineLite({})
-export var fourAnimate = new TimelineLite()
-export var fiveAnimate = new TimelineLite()
+export var secondAnimate = new TimelineLite({paused: true})
+export var fourAnimate = new TimelineLite({paused: true})
+export var fiveAnimate = new TimelineLite({paused: true})
 
 // 初始化动画
 function initAnimate () {
@@ -94,49 +94,80 @@ function initAnimate () {
   }
 
   // 第5屏初始化
-  var $svg = $('.tech-svg'),
-   startLine1 = $svg.find('#i2'),
-   endLine1 = $svg.find('#i1'),
-   yuan1 = $svg.find('#_4'),
-   yuan2 = $svg.find('#_3'),
-   yuan3 = $svg.find('#_2'),
-   yuan4 = $svg.find('#_1'),
-   z1 = $svg.find('#z1'),
-   z2 = $svg.find('#z2'),
-   z3 = $svg.find('#z3'),
-   z4 = $svg.find('#z4'),
-   z5 = $svg.find('#z5')
-  TweenMax.set(z5, {
-    scaleX:.3,scaleY:.3,
-    transformOrigin:'center center',
-    opacity:0,
-    rotation:180,
-
+  var $svg5 = $('.tech-svg'),
+   startLine1 = $svg5.find('#i2'),
+   endLine1 = $svg5.find('#i1'),
+   yuan1 = $svg5.find('#_4'),
+   yuan2 = $svg5.find('#_3'),
+   yuan3 = $svg5.find('#_2'),
+   yuan4 = $svg5.find('#_1'),
+   z1 = $svg5.find('#z1'),
+   z2 = $svg5.find('#z2'),
+   z3 = $svg5.find('#z3'),
+   z4 = $svg5.find('#z4'),
+   z5 = $svg5.find('#z5'),
+   enbLine1 = $svg5.find('.enb-line1'),
+   enbLine2 = $svg5.find('.enb-line2'),
+   enbLine3 = $svg5.find('.enb-line3'),
+   enbLine4 = $svg5.find('.enb-line4'),
+   enbText1 = $svg5.find('.enb-text1'),
+   enbText2 = $svg5.find('.enb-text2'),
+   enbText3 = $svg5.find('.enb-text3'),
+   enbText4 = $svg5.find('.enb-text4')
+  TweenMax.set($svg5, {
+    opacity: 0
+  })
+  TweenMax.set([enbText1, enbText2, enbText3, enbText4], {
+    opacity: 0,
+    scaleX: .3
 
   })
-  TweenMax.set([z1,z2,z3,z4],{opacity:0})
+
+  function initLine (el) {
+    var pathLength = el[0].getTotalLength()
+    TweenMax.set(el, {
+      strokeDashoffset: pathLength,
+      strokeDasharray: pathLength
+    })
+  }
+
+  initLine(enbLine1)
+  initLine(enbLine2)
+  initLine(enbLine3)
+  initLine(enbLine4)
+  TweenMax.set(z5, {
+    scaleX: .3, scaleY: .3,
+    transformOrigin: 'center center',
+    opacity: 0,
+    rotation: 180,
+
+  })
+  TweenMax.set([z1, z2, z3, z4], {opacity: 0})
   TweenMax.set(yuan1, {
-    x: 550, y: -500
+    x: 550, y: -1500
   })
   TweenMax.set(startLine1, {
-    x: 660, y: -600
+    x: 660, y: -1600
   })
   TweenMax.set(endLine1, {
-    x: 300, y: -300
+    x: 300, y: -1300
   })
   TweenMax.set(yuan2, {
-    x: 550, y: -500
+    x: 550, y: -1500
   })
   TweenMax.set(yuan3, {
-    x: 250, y: -200
+    x: 250, y: -1200
   })
   TweenMax.set(yuan4, {
-    x: 250, y: -200
+    x: 250, y: -1200
   })
   fiveAnimate
+   .to($svg5, 0, {
+     opacity: 1
+   },1)
    .to(startLine1, 1.1, {
      x: 0, y: 0
-   }, 1)
+   })
    .to(yuan1, 1.3, {
      x: 0, y: 0
    }, '-=1')
@@ -152,23 +183,46 @@ function initAnimate () {
    .to(endLine1, 1, {
      x: 0, y: 0
    }, '-=1.2')
-   .to(z5, .3,{
-     scaleX:2,scaleY:2,
-     transformOrigin:'center center',
-     opacity:1,
-     rotation:0
-   },'-=0.3')
-   .to(z5, .3,{
-     scaleX:1,scaleY:1,
-     transformOrigin:'center center'
+   .to(z5, .3, {
+     scaleX: 2, scaleY: 2,
+     transformOrigin: 'center center',
+     opacity: 1,
+     rotation: 0
+   }, '-=0.3')
+   .to(z5, .3, {
+     scaleX: 1, scaleY: 1,
+     transformOrigin: 'center center'
    })
-   .to([z1,z2,z3,z4], 1,{
-     opacity:1,
+   .to([z1, z2, z3, z4], .5, {
+     opacity: 1,
    })
-   .to(z5, 3,{
-     repeat:-1,
-     opacity:.5,
-     yoyo:true
+   .to(enbLine1, 1, {
+     strokeDashoffset: 0
+   })
+   .to(enbText1, .5, {
+     opacity: 1,
+     scaleX: 1
+   })
+   .to(enbLine2, 1, {
+     strokeDashoffset: 0
+   })
+   .to(enbText2, .5, {
+     opacity: 1,
+     scaleX: 1
+   })
+   .to(enbLine3, 1, {
+     strokeDashoffset: 0
+   })
+   .to(enbText3, .5, {
+     opacity: 1,
+     scaleX: 1
+   })
+   .to(enbLine4, 1, {
+     strokeDashoffset: 0
+   })
+   .to(enbText4, .5, {
+     opacity: 1,
+     scaleX: 1
    })
 
   fourAnimate
