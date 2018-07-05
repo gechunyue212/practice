@@ -139,7 +139,7 @@ function initAnimate () {
     scaleX: .3, scaleY: .3,
     transformOrigin: 'center center',
     opacity: 0,
-    rotation: 180,
+    // rotation: 180,
 
   })
   TweenMax.set([z1, z2, z3, z4], {opacity: 0})
