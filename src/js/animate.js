@@ -196,28 +196,28 @@ function initAnimate () {
    .to([z1, z2, z3, z4], .5, {
      opacity: 1,
    })
-   .to(enbLine1, 1, {
+   .to(enbLine1, .5, {
      strokeDashoffset: 0
    })
    .to(enbText1, .5, {
      opacity: 1,
      scaleX: 1
    })
-   .to(enbLine2, 1, {
+   .to(enbLine2, .5, {
      strokeDashoffset: 0
    })
    .to(enbText2, .5, {
      opacity: 1,
      scaleX: 1
    })
-   .to(enbLine3, 1, {
+   .to(enbLine3, .5, {
      strokeDashoffset: 0
    })
    .to(enbText3, .5, {
      opacity: 1,
      scaleX: 1
    })
-   .to(enbLine4, 1, {
+   .to(enbLine4, .5, {
      strokeDashoffset: 0
    })
    .to(enbText4, .5, {
