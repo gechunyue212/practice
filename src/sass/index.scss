@@ -259,25 +259,23 @@ html, body, .swiper-container, .swiper-slide {
 
 .swiper-slide7 {
   .slide7-container {
-    max-width: 800px;
     margin: 100px auto 0;
-
+    text-align: center;
     .team-item {
-      margin-bottom: 20px;
       position: relative;
       overflow: hidden;
+      width: 20%;
+      min-width: 120px;
+      padding:20px;
       .team-img {
         width: 100%;
+        border-radius: 50%;
       }
       &:hover .people-des-wrap {
         bottom: 0;
       }
       .people-des-wrap {
         transition: .5s all;
-        position: absolute;
-        bottom: -100px;
-        right: 15px;
-        left: 15px;
         background: rgba(0, 0, 0, .4);
         text-align: center;
         padding: 15px;
