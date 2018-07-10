@@ -67,36 +67,36 @@ html, body, .swiper-container, .swiper-slide {
     @media (max-width: 750px) {
       padding-top: 20px;
     }
-    .col-sm-4{
-      @include media(margin-bottom,(500:5px));
+    .col-sm-4 {
+      @include media(margin-bottom, (500:5px));
     }
   }
   .three-img {
     width: 75px;
     margin-right: 10px;
-    @include media(width,(500:40px));
+    @include media(width, (500:40px));
   }
   .three-item-right {
     overflow: hidden;
-    @include media(overflow,(800:visible));
+    @include media(overflow, (800:visible));
     .three-h3 {
       $h: 33px;
       height: $h;
       font-size: 24px;
       line-height: $h;
       margin-bottom: 23px;
-      @include media(font-size,(500:16px));
-      @include media(height,(500:auto));
-      @include media(margin-bottom,(500:5px));
-      @include media(line-height,(500:1));
+      @include media(font-size, (500:16px));
+      @include media(height, (500:auto));
+      @include media(margin-bottom, (500:5px));
+      @include media(line-height, (500:1));
     }
     .three-content {
       font-size: 16px;
       line-height: 30px;
       margin-bottom: 76px;
       min-height: 200px;
-      @include media(line-height,(500:1.1));
-      @include media(font-size,(500:12px));
+      @include media(line-height, (500:1.1));
+      @include media(font-size, (500:12px));
       @media (max-width: 750px) {
         min-height: auto;
         margin-bottom: 20px;
@@ -130,7 +130,7 @@ html, body, .swiper-container, .swiper-slide {
       margin-top: 40px;
       width: 166px;
       margin-bottom: 10px;
-      @include media(display,(500:none));
+      @include media(display, (500:none));
 
     }
   }
@@ -143,9 +143,9 @@ html, body, .swiper-container, .swiper-slide {
     height: auto;
     bottom: 0;
     right: 0;
-    @include media(width,(500:100%));
-    @include media(max-width,(500:none));
-    @include media(bottom,(500:40px));
+    @include media(width, (500:100%));
+    @include media(max-width, (500:none));
+    @include media(bottom, (500:40px));
   }
 }
 
@@ -163,7 +163,7 @@ html, body, .swiper-container, .swiper-slide {
     }
     height: 400px;
     overflow: visible;
-    .swiper-poa{
+    .swiper-poa {
       position: absolute;
       bottom: 0;
       left: 0;
@@ -222,8 +222,8 @@ html, body, .swiper-container, .swiper-slide {
   }
 }
 
-.swiper-slide5-1{
-  .tech-svg{
+.swiper-slide5-1 {
+  .tech-svg {
     max-width: 100%;
     max-height: 100%;
     overflow: visible;
@@ -266,7 +266,7 @@ html, body, .swiper-container, .swiper-slide {
       overflow: hidden;
       width: 20%;
       min-width: 120px;
-      padding:20px;
+      padding: 20px;
       .team-img {
         width: 100%;
         border-radius: 50%;
@@ -288,6 +288,29 @@ html, body, .swiper-container, .swiper-slide {
           color: rgba(255, 255, 255, 1);
         }
       }
+    }
+  }
+}
+
+.swiper-slide8 {
+  .ge-container {
+    height: 100%;
+    position: relative;
+  }
+  .cooperation {
+    text-align: center;
+    width: 100%;
+    .cooperation-item {
+      display: inline-block;
+      padding:0 20px;
+      margin-bottom: 20px;
+      max-width: 33%;
+      @include mediaAll((
+      ))
+    }
+    .cooperation-img {
+      max-width: 100%;
+
     }
   }
 }
@@ -365,7 +388,7 @@ html, body, .swiper-container, .swiper-slide {
   line-height: 30px;
   $mediaAll: (
                   (font-size, (600:14px)),
-                  (line-height,(700:24px,500:20px))
+                  (line-height, (700:24px, 500:20px))
   );
   @include mediaAll($mediaAll)
 }
