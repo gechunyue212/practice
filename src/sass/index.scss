@@ -36,8 +36,7 @@ html, body, .swiper-container, .swiper-slide {
     width: $w;
     height: $w;
     margin-top: 12px;
-    background: #fff;
-    border: 2px solid rgba(136, 223, 148, 1);
+    background: rgba(255,255,255,.4);
     opacity: 1;
     &-active {
       background: linear-gradient(151.1deg, rgba(58, 179, 155, 1), rgba(136, 223, 148, 1));
@@ -60,13 +59,14 @@ html, body, .swiper-container, .swiper-slide {
   svg {
     width: 100%;
     max-height: 100%;
+    transform: translate3d(0,10%,0);
   }
 
 }
 
 .swiper-slide3 {
   .three-contain {
-    padding-top: 100px;
+    padding-top: 120px;
     @media (max-width: 750px) {
       padding-top: 20px;
     }
@@ -94,7 +94,7 @@ html, body, .swiper-container, .swiper-slide {
       @include media(line-height, (500:1));
     }
     .three-content {
-      font-size: 16px;
+      font-size: 14px;
       line-height: 30px;
       margin-bottom: 76px;
       min-height: 200px;
@@ -107,9 +107,9 @@ html, body, .swiper-container, .swiper-slide {
     }
     .three-line {
       width: 60%;
-      height: 12px;
+      height: 5px;
       background: linear-gradient(151.1deg, rgba(58, 179, 155, 1), rgba(136, 223, 148, 1));
-      border-radius: 8px;
+      border-radius: 4px;
     }
     .three-line {
       animation-name: three-line;
@@ -144,7 +144,7 @@ html, body, .swiper-container, .swiper-slide {
     max-width: 80%;
     max-height: 60%;
     height: auto;
-    bottom: 0;
+    bottom: 50px;
     right: 0;
     @include media(width, (500:100%));
     @include media(max-width, (500:none));
@@ -174,7 +174,7 @@ html, body, .swiper-container, .swiper-slide {
       right: 0;
     }
     .time-wrap {
-      padding: 0 30px;
+      padding: 10px 30px;
       background: linear-gradient(92.4deg, rgba(58, 179, 155, .4), rgba(1, 1, 1, 0));
       border-left: 2px solid #88DF94;
       margin: $h 0 0 $w/2;
@@ -183,7 +183,7 @@ html, body, .swiper-container, .swiper-slide {
     .time-year {
       padding-left: $w/2;
       height: 50px;
-      font-size: 36px;
+      font-size: 30px;
       font-weight: bold;
       background: linear-gradient(151.1deg, rgba(58, 179, 155, 1), rgba(136, 223, 148, 1));
       line-height: 50px;
@@ -202,7 +202,6 @@ html, body, .swiper-container, .swiper-slide {
       transform: translate3d(-$w/2, -$h, 0);
     }
     .time-title {
-      margin-top: 10px;
       margin-bottom: 10px;
       font-size: 18px;
     }
@@ -212,7 +211,9 @@ html, body, .swiper-container, .swiper-slide {
       line-height: 25px;
       .en{
         font-size: 12px;
-        line-height: 1.2;
+        line-height: 1.4;
+        display: inline-block;
+
       }
     }
   }
@@ -255,7 +256,7 @@ html, body, .swiper-container, .swiper-slide {
     }
     .container-wrap {
       .title {
-        font-size: 18px;
+        font-size: 16px;
         margin: 20px 0 10px;
         text-decoration: none;
         color: #fff;
