@@ -9,10 +9,13 @@
 @import "nav";
 html, body, .swiper-container, .swiper-slide {
   height: 100%;
-  background: #000;
+
   color: #fff;
 }
-
+.main-srapper-start>.swiper-slide:not(.swiper-slide1){
+  background: #000 url('../../static/img/background.jpg') center bottom no-repeat;
+  background-size: cover;
+}
 .ge-container {
   max-width: 1200px;
   margin-left: auto;
@@ -150,6 +153,7 @@ html, body, .swiper-container, .swiper-slide {
 }
 
 .time-swiper-container {
+  height: auto;
   margin-top: 20px;
   .swiper-slide {
     $w: 38px;
@@ -206,6 +210,10 @@ html, body, .swiper-container, .swiper-slide {
       font-size: 16px;
       opacity: .8;
       line-height: 25px;
+      .en{
+        font-size: 12px;
+        line-height: 1.2;
+      }
     }
   }
   .swiper-button-next, .swiper-button-prev {
@@ -227,12 +235,14 @@ html, body, .swiper-container, .swiper-slide {
     max-width: 100%;
     max-height: 100%;
     overflow: visible;
+    top:60%;
   }
 }
 
 .swiper-slide6 {
   .six-contain {
     margin-top: 50px;
+    color: #fff;
     .img-wrap {
       overflow: hidden;
     }
@@ -246,8 +256,9 @@ html, body, .swiper-container, .swiper-slide {
     .container-wrap {
       .title {
         font-size: 18px;
-        height: 50px;
         margin: 20px 0 10px;
+        text-decoration: none;
+        color: #fff;
       }
       .from {
         font-size: 14px;
@@ -259,8 +270,8 @@ html, body, .swiper-container, .swiper-slide {
 
 .swiper-slide7 {
   .slide7-container {
-    margin: 100px auto 0;
     text-align: center;
+    width: 100%;
     .team-item {
       position: relative;
       overflow: hidden;
@@ -276,7 +287,6 @@ html, body, .swiper-container, .swiper-slide {
       }
       .people-des-wrap {
         transition: .5s all;
-        background: rgba(0, 0, 0, .4);
         text-align: center;
         padding: 15px;
 
@@ -293,16 +303,13 @@ html, body, .swiper-container, .swiper-slide {
 }
 
 .swiper-slide8 {
-  .ge-container {
-    height: 100%;
-    position: relative;
-  }
+
   .cooperation {
     text-align: center;
     width: 100%;
     .cooperation-item {
       display: inline-block;
-      padding:0 20px;
+      padding: 0 20px;
       margin-bottom: 20px;
       max-width: 33%;
       @include mediaAll((
@@ -312,6 +319,39 @@ html, body, .swiper-container, .swiper-slide {
       max-width: 100%;
 
     }
+  }
+  .link-wrap {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    margin-bottom: 40px;
+    li {
+      display: inline-block;
+      transition: .4s all;
+      position: relative;
+      top: 0;
+      &:hover {
+        top: -20px;
+      }
+      a {
+        color: #fff;
+        text-decoration: none;
+
+        img {
+          margin: 10px 50px;
+          display: block;
+        }
+      }
+    }
+  }
+}
+
+.swiper-slide {
+  .ge-container {
+    height: 100%;
+    position: relative;
   }
 }
 

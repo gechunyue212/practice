@@ -40,16 +40,16 @@ function initAnimate () {
     y: 2000
   })
   TweenMax.set(svgItem1, {
-    x: 324,
+    x: 374,
     y: 736
   })
   TweenMax.set(svgItem2, {
-    y: 637,
-    x: 1165
+    y: 647,
+    x: 1205
   })
   TweenMax.set(svgItem3, {
     x: 1038,
-    y: 175
+    y: 230
   })
   TweenMax.set(line0, {
     strokeDashoffset: 324,
