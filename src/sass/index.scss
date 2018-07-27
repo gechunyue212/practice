@@ -7,15 +7,28 @@
 @import "language";
 @import "ge-common";
 @import "nav";
+@mixin swiper-btn-common {
+  position: absolute;
+  top: 100%;
+  margin-top: -44px;
+  left: 50%;
+  width: 30px;
+  height: 30px;
+  background: url('../../static/img/l1@2x.png') no-repeat;
+  background-size: 100% 100%;
+}
+
 html, body, .swiper-container, .swiper-slide {
   height: 100%;
 
   color: #fff;
 }
-.main-srapper-start>.swiper-slide:not(.swiper-slide1){
+
+.main-srapper-start > .swiper-slide:not(.swiper-slide1) {
   background: #000 url('../../static/img/background.jpg') center bottom no-repeat;
   background-size: cover;
 }
+
 .ge-container {
   max-width: 1200px;
   margin-left: auto;
@@ -36,7 +49,7 @@ html, body, .swiper-container, .swiper-slide {
     width: $w;
     height: $w;
     margin-top: 12px;
-    background: rgba(255,255,255,.4);
+    background: rgba(255, 255, 255, .4);
     opacity: 1;
     &-active {
       background: linear-gradient(151.1deg, rgba(58, 179, 155, 1), rgba(136, 223, 148, 1));
@@ -59,7 +72,7 @@ html, body, .swiper-container, .swiper-slide {
   svg {
     width: 100%;
     max-height: 100%;
-    transform: translate3d(0,10%,0);
+    transform: translate3d(0, 10%, 0);
   }
 
 }
@@ -155,7 +168,7 @@ html, body, .swiper-container, .swiper-slide {
 .time-swiper-container {
   height: auto;
   margin-top: 20px;
-  padding-bottom: 60px;
+  padding-bottom: 100px;
   .swiper-slide {
     $w: 38px;
     $h: 32px;
@@ -210,7 +223,7 @@ html, body, .swiper-container, .swiper-slide {
       font-size: 16px;
       opacity: .8;
       line-height: 25px;
-      .en{
+      .en {
         font-size: 12px;
         line-height: 1.4;
         display: inline-block;
@@ -219,14 +232,7 @@ html, body, .swiper-container, .swiper-slide {
     }
   }
   .swiper-button-next-time, .swiper-button-prev-time {
-    position: absolute;
-    top: 100%;
-    margin-top: -44px;
-    left: 50%;
-    width: 40px;
-    height: 40px;
-    background: url('../../static/img/l1@2x.png') no-repeat;
-    background-size: 100% 100%;
+    @include swiper-btn-common;
   }
   .swiper-button-next-time {
     margin-left: 50px;
@@ -243,12 +249,12 @@ html, body, .swiper-container, .swiper-slide {
     max-width: 100%;
     max-height: 100%;
     overflow: visible;
-    top:60%;
+    top: 60%;
   }
 }
 
 .swiper-slide6 {
-  .enb-h2{
+  .enb-h2 {
     margin-top: 50px;
   }
   .six-contain {
@@ -310,13 +316,25 @@ html, body, .swiper-container, .swiper-slide {
         }
       }
     }
-    .swiper-wrapper{
+    .swiper-wrapper {
       padding-bottom: 100px;
     }
-    .swiper-pagination-bullet{
+    .swiper-pagination-bullet {
       width: 12px;
       height: 12px;
     }
+  }
+  .swiper-button-next-people, .swiper-button-prev-people{
+    @include swiper-btn-common;
+    z-index: 1;
+  }
+  .swiper-button-next-people {
+    margin-left: 50px;
+    transform: rotate(180deg);
+  }
+  .swiper-button-prev-people {
+    margin-left: -50px;
+
   }
 }
 
@@ -414,6 +432,7 @@ html, body, .swiper-container, .swiper-slide {
       height: $h;
       line-height: $h;
       border-radius: 6px;
+      color: #fff;
       border: 1px solid rgba(255, 255, 255, 1);
       cursor: pointer;
       &:hover {

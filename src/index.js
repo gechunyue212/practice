@@ -1,8 +1,7 @@
 import './sass/index.scss'
 import './js/demo-5/index'
 import './js/language'
-import {secondAnimate,fourAnimate,fiveAnimate} from  './js/animate'
-
+import { secondAnimate, fourAnimate, fiveAnimate } from './js/animate'
 
 var mySwiper = new Swiper('.main-swiper-container', {
   direction: 'vertical',
@@ -43,17 +42,18 @@ var mySwiper = new Swiper('.main-swiper-container', {
 })
 var tiemSwiper = new Swiper('.time-swiper-container', {
   slidesPerView: 'auto',
+  slidesPerGroup: 4,
   navigation: {
     nextEl: '.swiper-button-next-time',
     prevEl: '.swiper-button-prev-time',
-  },
+  }
 })
-new Swiper('.team-swiper-wrap',{
+new Swiper('.team-swiper-wrap', {
   slidesPerView: 'auto',
   slidesPerGroup: 3,
-  pagination: {
-    el: '.swiper-pagination',
-    clickable: true,
+  navigation: {
+    nextEl: '.swiper-button-next-people',
+    prevEl: '.swiper-button-prev-people',
   },
 })
 
