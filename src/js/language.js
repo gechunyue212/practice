@@ -1,7 +1,8 @@
 /* 切换语言 */
 var isEnglish = location.search.indexOf('chinese') === -1
+isEnglish = !isEnglish
 
-function setLanguage() {
+function setLanguage () {
   if (isEnglish) {
     $('body').removeClass('chinese').addClass('english')
   } else {
@@ -12,7 +13,6 @@ function setLanguage() {
 
 setLanguage()
 $('.tab-language').click(function () {
-
   isEnglish = !isEnglish
   setLanguage()
 })

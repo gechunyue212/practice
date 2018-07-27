@@ -44,11 +44,18 @@ var mySwiper = new Swiper('.main-swiper-container', {
 var tiemSwiper = new Swiper('.time-swiper-container', {
   slidesPerView: 'auto',
   navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
+    nextEl: '.swiper-button-next-time',
+    prevEl: '.swiper-button-prev-time',
   },
 })
-
+new Swiper('.team-swiper-wrap',{
+  slidesPerView: 'auto',
+  slidesPerGroup: 3,
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
+  },
+})
 
 
 
