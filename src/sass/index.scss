@@ -111,6 +111,12 @@ html, body, .swiper-container, .swiper-slide {
       line-height: 30px;
       margin-bottom: 76px;
       min-height: 250px;
+      .en{
+        padding-top: 10px;
+        font-size: 12px;
+        line-height: 22px;
+        display: inline-block;
+      }
       @include media(line-height, (500:1.1));
       @include media(font-size, (500:12px));
       @media (max-width: 750px) {
