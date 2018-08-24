@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>ENB-官网</title>
+    <meta name="viewport" content="initial-scale=1">
+    <link href=favicon.ico rel="shortcut icon" type=image/x-icon>
+    <link rel="stylesheet" href="static/css/swiper.min.css">
+    <link rel="stylesheet" href="static/css/animate.min.css">
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" rel="stylesheet">
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="chinese">
+<div style="height:100%;">
+    <div class="swiper-container main-swiper-container">
+        <div class="swiper-wrapper main-srapper-start">
+            ${require('html-loader!./pages/slide1.html')}
+            ${require('html-loader!./pages/slide2.html')}
+            ${require('html-loader!./pages/slide3.html')}
+            ${require('html-loader!./pages/slide4.html')}
+            ${require('html-loader!./pages/slide5.html')}
+            ${require('html-loader!./pages/slide51.html')}
+            ${require('html-loader!./pages/slide6.html')}
+            ${require('html-loader!./pages/slide7.html')}
+            ${require('html-loader!./pages/slide8.html')}
+        </div>
+        <div class="swiper-pagination swiper-pagination-main"></div>
+    </div>
+</div>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="static/js/TweenMax.min.js"></script>
+<script src="static/js/swiper.min.js"></script>
+<script src="static/js/swiper.animate.min.js"></script>
+<script src="static/js/vendor/three.min.js"></script>
+<script src="static/js/vendor/OrbitControls.js"></script>
+<script src="static/js/vendor/fast-simplex-noise.js"></script>
+<script>
+  setTimeout(() => document.body.classList.add('render'), 60)
+</script>
+</body>
+</html>
