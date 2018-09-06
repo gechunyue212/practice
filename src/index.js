@@ -56,6 +56,14 @@ new Swiper('.team-swiper-wrap', {
     prevEl: '.swiper-button-prev-people',
   },
 })
-
+var bannerSwiper = new Swiper ('.banner-swiper', {
+  autoplay:{
+    disableOnInteraction:false
+  },
+  // 如果需要滚动条
+  scrollbar: {
+    el: '.swiper-scrollbar',
+  }
+})
 
 

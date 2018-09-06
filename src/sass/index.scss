@@ -101,7 +101,7 @@ html, body, .swiper-container, .swiper-slide {
       font-size: 24px;
       line-height: $h;
       margin-bottom: 23px;
-      .en{
+      .en {
         font-size: 20px;
       }
       @include media(font-size, (500:16px));
@@ -115,7 +115,7 @@ html, body, .swiper-container, .swiper-slide {
       margin-bottom: 76px;
       min-height: 250px;
 
-      .en{
+      .en {
         font-size: 12px;
         line-height: 22px;
         display: inline-block;
@@ -333,7 +333,7 @@ html, body, .swiper-container, .swiper-slide {
       height: 12px;
     }
   }
-  .swiper-button-next-people, .swiper-button-prev-people{
+  .swiper-button-next-people, .swiper-button-prev-people {
     @include swiper-btn-common;
     z-index: 1;
   }
@@ -405,17 +405,30 @@ html, body, .swiper-container, .swiper-slide {
 .content-outer {
   @include poa-father();
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: flex-start;
   align-items: center;
   text-align: center;
   opacity: 0;
   perspective: 300px;
   pointer-events: none;
   transition: opacity 600ms;
-  padding-top: 100px;
+  /*padding-top: 50px;*/
+  .banner-swiper, .swiper-slide {
+    width: 100%;
+    height: 100%;
+    background: #221a53;
+    .banner-img {
+      width: 100%;
+    }
+  }
   .content-inner {
+    margin-top: -300px;
+    position: relative;
+    z-index: 123;
     .logo-main {
       width: 100px;
+      display: none;
     }
     h1 {
       text-transform: uppercase;
